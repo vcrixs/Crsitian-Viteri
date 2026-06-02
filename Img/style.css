@@ -1,0 +1,698 @@
+/* ==========================================================================
+   1. RESETEO Y CONFIGURACIÓN BASE (TEMA AZUL MARINO PROFUNDO)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* El fondo base es el azul marino más oscuro */
+    background-color: #081C34; 
+    color: #F3F3F3; 
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Necesario para contener los orbes de fondo absolutos sin generar scroll lateral */
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   2. FONDOS ANIMADOS GLOBALES (EL ALMA DEL LIQUID GLASS)
+   ========================================================================== */
+.fondo-liquido-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Mantiene las formas detrás de todo el contenido */
+    overflow: hidden;
+}
+
+/* Los orbes crean los gradientes desenfocados que reaccionan al cristal */
+.orbe-fluido {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px); /* Desenfoque masivo para fusionar colores */
+    animation: flotar-suave 20s infinite alternate ease-in-out;
+}
+
+.orbe-oceano {
+    width: 50vw;
+    height: 50vw;
+    background-color: #133C64; /* Azul marino medio/oceánico */
+    top: -10%;
+    left: -10%;
+}
+
+.orbe-profundo {
+    width: 40vw;
+    height: 40vw;
+    background-color: #081C34; /* Añade profundidad oscura */
+    bottom: -20%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+.orbe-acento {
+    width: 30vw;
+    height: 30vw;
+    background-color: rgba(231, 229, 221, 0.08); /* Brillo tenue del color claro */
+    top: 40%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+/* Animación de movimiento lento para el fondo */
+@keyframes flotar-suave {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(10%, 10%) scale(1.1); }
+}
+
+/* ==========================================================================
+   3. ESTILOS REUTILIZABLES Y BOTONES
+   ========================================================================== */
+.seccion-transparente {
+    padding: 8rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.contenedor-general {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.titulo-seccion-claro {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    font-weight: 800;
+    color: #F3F3F3;
+    letter-spacing: -1px;
+}
+
+.subtitulo-seccion-claro {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #E7E5DD; 
+    margin-bottom: 0.5rem;
+}
+
+.punto-acento {
+    color: #E7E5DD;
+}
+
+/* Botones con estilo premium y gran contraste */
+.boton-accion-principal, .boton-enviar {
+    display: inline-block;
+    background-color: #E7E5DD; /* Acento claro */
+    color: #081C34; /* Texto marino oscuro */
+    padding: 1rem 2.2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.boton-accion-principal:hover, .boton-enviar:hover {
+    background-color: #F3F3F3;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(231, 229, 221, 0.3);
+}
+
+/* Etiqueta de estilo Glass */
+.badge-vidrio {
+    display: inline-block;
+    background-color: rgba(243, 243, 243, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 243, 243, 0.2);
+    color: #E7E5DD;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   4. HEADER GLASSMORPHISM
+   ========================================================================== */
+.sitio-header {
+    background-color: rgba(8, 28, 52, 0.6); /* Azul marino muy transparente */
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(243, 243, 243, 0.08);
+}
+
+.header-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #F3F3F3;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.navegacion-principal ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.navegacion-principal a {
+    color: rgba(243, 243, 243, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.navegacion-principal a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #E7E5DD;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navegacion-principal a:hover {
+    color: #F3F3F3;
+}
+
+.navegacion-principal a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   5. SECCIÓN HERO Y FOTO LÍQUIDA (MORPHING)
+   ========================================================================== */
+.hero-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.hero-columna-texto {
+    flex: 1.2;
+}
+
+.hero-columna-texto h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+    letter-spacing: -2px;
+}
+
+/* Gradiente inverso claro para destacar sobre fondo oscuro */
+.texto-gradiente-marino {
+    /* Definimos el degradado */
+    background: linear-gradient(45deg, #F3F3F3, #DCDCDC);
+    
+    /* Versión estándar (para navegadores modernos) */
+    background-clip: text;
+    
+    /* Versión para navegadores basados en WebKit (Chrome, Safari, Edge) */
+    -webkit-background-clip: text;
+    
+    /* Hacemos transparente el color del texto para que el fondo se vea a través */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-columna-texto h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #E7E5DD;
+    margin-bottom: 2rem;
+}
+
+.descripcion-hero {
+    font-size: 1.1rem;
+    color: #DCDCDC;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+}
+
+.hero-columna-imagen {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTENEDOR DE IMAGEN: Efecto líquido dinámico */
+.marco-foto-liquido {
+    width: 380px;
+    height: 380px;
+    background: rgba(243, 243, 243, 0.05); /* Cristal puro */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    /* Borde simulando el reflejo de la luz en el agua */
+    border: 2px solid rgba(243, 243, 243, 0.2);
+    border-top: 2px solid rgba(243, 243, 243, 0.4);
+    padding: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    /* Animación clave para la forma fluida */
+    animation: morphing-liquido 8s ease-in-out infinite;
+}
+
+.foto-perfil-fluida {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* La imagen interna hereda la misma animación para moverse junto al marco */
+    animation: morphing-liquido 8s ease-in-out infinite;
+}
+
+/* Keyframes que alternan los radios de los bordes para crear un blob orgánico */
+@keyframes morphing-liquido {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 70% 70% 30% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* ==========================================================================
+   6. SECCIÓN PROYECTOS (TARJETAS GLASSMORPHISM)
+   ========================================================================== */
+.grid-tres-columnas {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+/* Estructura universal de tarjeta de cristal */
+.tarjeta-vidrio {
+    flex: 1;
+    min-width: 320px;
+    background: rgba(243, 243, 243, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 243, 243, 0.1);
+    border-top: 1px solid rgba(243, 243, 243, 0.25); /* Luz superior */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proyecto-contenedor-imagen {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.proyecto-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.proyecto-contenido {
+    padding: 2rem;
+}
+
+.proyecto-contenido h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #F3F3F3;
+}
+
+.proyecto-contenido p {
+    font-size: 0.95rem;
+    color: #DCDCDC;
+}
+
+.tarjeta-vidrio:hover {
+    transform: translateY(-8px);
+    background: rgba(243, 243, 243, 0.08);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    border-color: rgba(243, 243, 243, 0.3);
+}
+
+.tarjeta-vidrio:hover .proyecto-imagen {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   7. SECCIÓN HABILIDADES (CÍRCULOS DE CRISTAL)
+   ========================================================================== */
+.grid-cuatro-columnas {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta-habilidad-circular {
+    width: 220px;
+    height: 220px;
+    flex: 0 0 auto;
+    /* Estética de cristal circular */
+    background: linear-gradient(135deg, rgba(243, 243, 243, 0.08) 0%, rgba(243, 243, 243, 0.02) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(243, 243, 243, 0.15);
+    border-top: 1px solid rgba(243, 243, 243, 0.3);
+    border-radius: 50%; /* Forma redonda permanente */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.tarjeta-habilidad-circular:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(243, 243, 243, 0.12) 0%, rgba(243, 243, 243, 0.04) 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(243, 243, 243, 0.4);
+}
+
+.habilidad-numero {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(243, 243, 243, 0.15);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta-habilidad-circular:hover .habilidad-numero {
+    transform: translateY(-5px);
+    color: rgba(243, 243, 243, 0.3);
+}
+
+.tarjeta-habilidad-circular p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. SECCIÓN CONTACTO (FORMULARIO DE VIDRIO)
+   ========================================================================== */
+.contacto-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+.contacto-columna-info {
+    flex: 1;
+}
+
+.titulo-contacto {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 1.5rem;
+    color: #F3F3F3;
+}
+
+.descripcion-contacto {
+    font-size: 1.1rem;
+    color: #DCDCDC;
+}
+
+.contacto-columna-formulario {
+    flex: 1.1;
+    /* Panel de vidrio gigante para el formulario */
+    background: rgba(243, 243, 243, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 243, 243, 0.15);
+    border-top: 1px solid rgba(243, 243, 243, 0.3);
+    padding: 3.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campo-formulario label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #DCDCDC;
+}
+
+/* Inputs diseñados para integrarse al fondo transparente */
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 1rem;
+    /* Fondo translúcido interno */
+    background-color: rgba(8, 28, 52, 0.4);
+    border: 1px solid rgba(243, 243, 243, 0.2);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #F3F3F3;
+    transition: all 0.3s ease;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: rgba(243, 243, 243, 0.3);
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: #E7E5DD;
+    background-color: rgba(8, 28, 52, 0.6);
+    box-shadow: 0 0 0 4px rgba(231, 229, 221, 0.1);
+}
+
+.contacto-columna-formulario .boton-enviar {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.sitio-footer {
+    background-color: rgba(8, 28, 52, 0.9);
+    padding: 4rem 0;
+    border-top: 1px solid rgba(243, 243, 243, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: rgba(243, 243, 243, 0.5);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 2rem;
+}
+
+.redes-sociales a {
+    color: #E7E5DD;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #F3F3F3;
+    transform: translateY(-2px);
+}
+/* --- FOOTER: Estilos para el cierre del portafolio --- */
+
+.sitio-footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+    /* Ajusta este color al tono de azul de tu fondo */
+    background-color: transparent; 
+}
+
+.footer-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 24px; /* Espacio entre iconos */
+    justify-content: center;
+}
+
+.redes-sociales a {
+    display: block;
+    width: 24px; /* Tamaño del icono */
+    height: 24px;
+    color: #ffffff; /* Color de los iconos */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.redes-sociales a:hover {
+    opacity: 1;
+    transform: translateY(-3px); /* Un pequeño salto elegante */
+    cursor: pointer;
+}
+
+/* Asegurar que los iconos SVG se ajusten al contenedor */
+.redes-sociales a svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+/* a */
+.tarjeta-habilidad-circular {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carrusel-imagenes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura inicial */
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.contenido-original {
+    z-index: 3;
+    text-align: center;
+    color: white;
+    pointer-events: none; /* Para que no interfiera con el hover */
+}
+
+/* Hover: oscurecemos un poco más el fondo */
+.tarjeta-habilidad-circular:hover .overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.carrusel-imagenes img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* La magia: usamos 'ease-in-out' para suavidad máxima */
+    animation: suavizado 9s infinite ease-in-out;
+}
+
+/* Desfase para que roten en orden */
+.carrusel-imagenes img:nth-child(1) { animation-delay: 0s; }
+.carrusel-imagenes img:nth-child(2) { animation-delay: 3s; }
+.carrusel-imagenes img:nth-child(3) { animation-delay: 6s; }
+
+@keyframes suavizado {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    33% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+/* zzz */
