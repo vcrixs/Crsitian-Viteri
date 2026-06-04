@@ -342,6 +342,18 @@ body {
     width: 100%;
     height: 240px;
     overflow: hidden;
+    background-color: rgba(8, 28, 52, 0.4); /* Fondo azul oscuro por si la imagen es angosta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Agrega esto justo aquí abajo para domar la imagen */
+.proyecto-contenedor-imagen img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Hace que la imagen se encoja hasta verse COMPLETA sin recortar nada */
+    object-position: center;
 }
 
 .proyecto-imagen {
