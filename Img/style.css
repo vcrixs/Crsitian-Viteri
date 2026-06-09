@@ -180,42 +180,19 @@ body {
 }
 
 /* ==========================================================================
-   4. HEADER GLASSMORPHISM (100% ADAPTABLE Y FLOTANTE)
+   4. HEADER GLASSMORPHISM
    ========================================================================== */
-.sitio-header {
-    background-color: transparent; /* El fondo se traslada al contenedor interno */
-    padding: 0; /* Eliminamos el padding para controlar el espacio externamente */
-    position: sticky;
-    top: 15px; /* Margen constante en el techo al bajar por la página */
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
+.sitio-header{
+    background-color:rgba(8,28,52,.65);
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-.header-contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.2rem 2.5rem; /* Mantiene el espaciado original */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    /* Aquí aplicamos el diseño de cápsula flotante */
-    background-color: rgba(8, 28, 52, 0.65); 
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    
-    /* Esto evita que en celulares choque con los bordes de la pantalla */
-    width: calc(100% - 2rem); 
-}
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
-/* Ajuste para pantallas muy pequeñas (Celulares) */
-@media (max-width: 768px) {
-    .header-contenedor {
-        padding: 1rem 1.5rem;
-        border-radius: 15px; /* Bordes ligeramente más sutiles en pantallas pequeñas */
-    }
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .header-contenedor{
