@@ -1413,3 +1413,36 @@ body{
     padding: 0px !important;
     margin: 0px !important;
 }
+/* ==========================================================================
+   ALINEACIÓN MÁSTER Y CONTROL DE GRID PARA PROYECTOS INTERNOS
+   ========================================================================== */
+
+/* 1. Forzar una cuadrícula exacta y simétrica para los contenedores */
+.grid-galeria-interna {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 360px)) !important;
+    gap: 30px !important; /* Espacio uniforme entre cada cuadro */
+    justify-content: center !important; /* Centra la galería entera en la pantalla */
+    align-items: start !important; /* Alinea los techos de todos los cuadros perfectamente */
+    max-width: 1200px !important;
+    margin: 40px auto !important; /* Separa la galería de la barra superior */
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. Asegurar que los contenedores no se deformen bajo ninguna circunstancia */
+.cuadro-imagen-interno {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 380px !important; /* Altura estricta e idéntica para todos */
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 3. Evitar que la sección se meta debajo del menú de navegación */
+.pantalla-galeria-interna {
+    padding-top: 100px !important; /* Colchón de seguridad para empujar los videos hacia abajo */
+    box-sizing: border-box !important;
+}
