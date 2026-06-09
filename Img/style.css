@@ -1375,19 +1375,41 @@ body{
     padding: 15px; 
 }
 /* ... Todos los estilos anteriores de su portafolio ... */
-
-
 /* ==========================================================================
-   CORRECCIÓN DE ESCALADO COMPLETO PARA IMÁGENES INTERNAS
+   CONFIGURACIÓN DE LLENADO TOTAL (ESTILO REPRODUCTOR INMERSIVO)
    ========================================================================== */
+
+.cuadro-imagen-interno {
+    flex: 1;
+    min-width: 280px !important;
+    max-width: 360px !important;
+    height: 380px !important; 
+    background: rgba(5, 16, 32, 0.6) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important; 
+    overflow: hidden !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
 
 .cuadro-imagen-interno img {
     width: 100% !important;
-    max-width: 100% !important;
     height: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important; /* Fuerza a la imagen a encuadrarse por completo */
+    object-fit: cover !important; /* Ahora expande por completo la imagen */
     object-position: center !important;
-    padding: 15px !important;
-    box-sizing: border-box !important; /* Asegura que el padding no altere el tamaño */
+    padding: 0px !important; /* Sin márgenes para lograr el llenado total */
+    margin: 0px !important;
+    display: block !important;
+}
+
+.cuadro-imagen-interno video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Ahora el video cubre todo el contenedor */
+    padding: 0px !important;
+    margin: 0px !important;
 }
