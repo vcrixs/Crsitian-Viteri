@@ -79,41 +79,103 @@
             <div class="contenedor-general">
                 <span class="subtitulo-seccion-claro">Portafolio</span>
                 <h2 class="titulo-seccion-claro">Mis Proyectos</h2>
-                <div class="grid-tres-columnas">
-                    <!-- Tarjeta de Cristal 1 -->
-                    <article class="tarjeta-vidrio">
-                        <div class="proyecto-contenedor-imagen">
-                            <img src="Imagenes/Portada.png" alt="Imagen diseño" class="proyecto-imagen">
+                
+                <div class="portafolio-interactivo">
+                    
+                    <input type="checkbox" id="control-pantalla-diseno" class="checkbox-pantalla check-diseno">
+                    <input type="checkbox" id="control-pantalla-ilustracion" class="checkbox-pantalla check-ilustracion">
+                    <input type="checkbox" id="control-pantalla-edicion" class="checkbox-pantalla check-edicion">
+
+                    <div class="pantalla-proyectos-principal">
+                        <div class="grid-tres-columnas">
+                            
+                            <label for="control-pantalla-diseno" class="tarjeta-vidrio tarjeta-diseno-click">
+                                <div class="proyecto-contenedor-imagen">
+                                    <img src="Imagenes/Portada.png" alt="Imagen diseño" class="proyecto-imagen">
+                                </div>
+                                <div class="proyecto-contenido">
+                                    <h3>Diseño</h3>
+                                    <p>Soluciones visuales pensadas para comunicar con claridad, equilibrio y una identidad que impacta.</p>
+                                </div>
+                            </label>
+
+                            <label for="control-pantalla-ilustracion" class="tarjeta-vidrio tarjeta-ilustracion-click">
+                                <div class="proyecto-contenedor-imagen">
+                                    <img src="Imagenes/Ilustracion1.jpg" alt="Imagen ilustracion" class="proyecto-imagen">
+                                </div>
+                                <div class="proyecto-contenido">
+                                    <h3>Ilustración</h3>
+                                    <p>Exploración de conceptos a través de formas y color, transformando ideas en piezas con personalidad propia.</p>
+                                </div>
+                            </label>
+
+                            <label for="control-pantalla-edicion" class="tarjeta-vidrio tarjeta-edicion-click">
+                                <div class="proyecto-contenedor-imagen">
+                                    <img src="Imagenes/Edicion1.jpeg" alt="Imagen representativa de proyecto" class="proyecto-imagen">
+                                </div>
+                                <div class="proyecto-contenido">
+                                    <h3>Edicion</h3>
+                                    <p>Narrativa audiovisual donde el ritmo, la composición y el detalle se unen para contar historias reales.</p>
+                                </div>
+                            </label>
+
                         </div>
-                        <div class="proyecto-contenido">
-                            <h3>Diseño</h3>
-                            <p>Soluciones visuales pensadas para comunicar con claridad, equilibrio y una identidad que impacta.</p>
+                    </div>
+
+                    <div class="pantalla-galeria-interna galeria-diseno">
+                        <label for="control-pantalla-diseno" class="boton-volver-vidrio">
+                            <span>← Volver al Menú</span>
+                        </label>
+                        <div class="grid-galeria-interna">
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/DisenoNuevo1.png" alt="Trabajo de Diseño 1">
+                            </div>
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/DisenoNuevo2.png" alt="Trabajo de Diseño 2">
+                            </div>
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/DisenoNuevo3.png" alt="Trabajo de Diseño 3">
+                            </div>
                         </div>
-                    </article>
-                    <!-- Tarjeta de Cristal 2 -->
-                    <article class="tarjeta-vidrio">
-                        <div class="proyecto-contenedor-imagen">
-                            <img src="Imagenes/Ilustracion1.jpg" alt="Imagen ilustracion class="proyecto-imagen">
+                    </div>
+
+                    <div class="pantalla-galeria-interna galeria-ilustracion">
+                        <label for="control-pantalla-ilustracion" class="boton-volver-vidrio">
+                            <span>← Volver al Menú</span>
+                        </label>
+                        <div class="grid-galeria-interna">
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/IlustracionNueva1.jpg" alt="Trabajo de Ilustración 1">
+                            </div>
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/IlustracionNueva2.jpg" alt="Trabajo de Ilustración 2">
+                            </div>
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/IlustracionNueva3.jpg" alt="Trabajo de Ilustración 3">
+                            </div>
                         </div>
-                        <div class="proyecto-contenido">
-                            <h3>Ilustración</h3>
-                            <p>Exploración de conceptos a través de formas y color, transformando ideas en piezas con personalidad propia.</p>
+                    </div>
+
+                    <div class="pantalla-galeria-interna galeria-edicion">
+                        <label for="control-pantalla-edicion" class="boton-volver-vidrio">
+                            <span>← Volver al Menú</span>
+                        </label>
+                        <div class="grid-galeria-interna">
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/EdicionNueva1.jpg" alt="Trabajo de Edición 1">
+                            </div>
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/EdicionNueva2.jpg" alt="Trabajo de Edición 2">
+                            </div>
+                            <div class="cuadro-imagen-interno">
+                                <img src="Imagenes/EdicionNueva3.jpg" alt="Trabajo de Edición 3">
+                            </div>
                         </div>
-                    </article>
-                    <!-- Tarjeta de Cristal 3 -->
-                    <article class="tarjeta-vidrio">
-                        <div class="proyecto-contenedor-imagen">
-                            <img src="Imagenes/Edicion1.jpeg" alt="Imagen representativa de proyecto" class="proyecto-imagen">
-                        </div>
-                        <div class="proyecto-contenido">
-                            <h3>Edicion</h3>
-                            <p>Narrativa audiovisual donde el ritmo, la composición y el detalle se unen para contar historias reales.</p>
-                        </div>
-                    </article>
+                    </div>
+
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN HABILIDADES: Círculos perfectos interactivos -->
         <section id="habilidades" class="seccion-transparente">
     <div class="contenedor-general">
