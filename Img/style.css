@@ -1225,3 +1225,109 @@ body{
 .orbe-acento{
     display:none;
 }
+/* ==========================================================================
+   10. SISTEMA DE NAVEGACIÓN INTERACTIVA MULTI-PANTALLA (SOLO CSS)
+   ========================================================================== */
+
+/* Esto oculta los truquitos de los checkboxes */
+.checkbox-pantalla {
+    display: none !important;
+}
+
+/* Hace que las tarjetas funcionen como botones al pasar el mouse */
+.tarjeta-diseno-click,
+.tarjeta-ilustracion-click,
+.tarjeta-edicion-click {
+    cursor: pointer;
+}
+
+/* IMPORTANTE: Esto oculta las 3 subgalerías por defecto para que no salgan abajo */
+.pantalla-galeria-interna {
+    display: none;
+    opacity: 0;
+    width: 100%;
+}
+
+/* ==========================================================================
+   LÓGICA CON INTERRUPTORES CSS (:checked)
+   ========================================================================== */
+
+/* 1. Al dar clic a CUALQUIERA, se ocultan las 3 tarjetas principales */
+.check-diseno:checked ~ .pantalla-proyectos-principal,
+.check-ilustracion:checked ~ .pantalla-proyectos-principal,
+.check-edicion:checked ~ .pantalla-proyectos-principal {
+    display: none !important;
+}
+
+/* 2. Al dar clic en Diseño, se muestra SOLO su galería */
+.check-diseno:checked ~ .galeria-diseno {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* 3. Al dar clic en Ilustración, se muestra SOLO su galería */
+.check-ilustracion:checked ~ .galeria-ilustracion {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* 4. Al dar clic en Edición, se muestra SOLO su galería */
+.check-edicion:checked ~ .galeria-edicion {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* ==========================================================================
+   DISEÑO DE LOS NUEVOS CUADROS Y BOTÓN VOLVER
+   ========================================================================== */
+
+.boton-volver-vidrio {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #F3F3F3;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.boton-volver-vidrio:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-3px);
+}
+
+.grid-galeria-interna {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.cuadro-imagen-interno {
+    flex: 1;
+    min-width: 280px;
+    max-width: 360px;
+    height: 380px; 
+    background: rgba(8, 28, 52, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuadro-imagen-interno img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Se adaptará de forma genial llenando el espacio */
+    object-position: center;
+}
