@@ -818,17 +818,36 @@ body{
 ========================== */
 
 .marco-foto-liquido{
-    position:relative;
+    position: relative;
 
-    background:rgba(255,255,255,.06);
+    width: 420px;
+    height: 420px;
 
-    border:1px solid rgba(255,255,255,.12);
+    padding: 14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.03)
+    );
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border: 1px solid rgba(255,255,255,.15);
 
     box-shadow:
-    0 30px 60px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.25);
+        0 30px 80px rgba(0,0,0,.35),
+        0 0 50px rgba(35,108,255,.12),
+        inset 0 1px 0 rgba(255,255,255,.25);
 
-    transition:all .6s ease;
+    overflow: hidden;
+
+    animation:
+        morphing-liquido 10s ease-in-out infinite;
+
+    transition: all .6s ease;
 }
 
 .marco-foto-liquido:hover{
@@ -1065,4 +1084,67 @@ body{
 
 ::-webkit-scrollbar-thumb:hover{
     background:#3b6aa7;
+}
+.marco-foto-liquido::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:inherit;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.35),
+        transparent 30%,
+        transparent 70%,
+        rgba(255,255,255,.08)
+    );
+
+    pointer-events:none;
+}
+.marco-foto-liquido::after{
+    content:"";
+
+    position:absolute;
+
+    width:120%;
+    height:120%;
+
+    left:-10%;
+    top:-10%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56,132,255,.25),
+            transparent 70%
+        );
+
+    filter:blur(40px);
+
+    z-index:-1;
+}
+@keyframes morphing-liquido {
+
+    0%{
+        border-radius:58% 42% 32% 68% / 45% 42% 58% 55%;
+    }
+
+    25%{
+        border-radius:42% 58% 65% 35% / 60% 35% 65% 40%;
+    }
+
+    50%{
+        border-radius:65% 35% 45% 55% / 40% 65% 35% 60%;
+    }
+
+    75%{
+        border-radius:35% 65% 55% 45% / 65% 45% 55% 35%;
+    }
+
+    100%{
+        border-radius:58% 42% 32% 68% / 45% 42% 58% 55%;
+    }
 }
