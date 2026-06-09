@@ -180,19 +180,32 @@ body {
 }
 
 /* ==========================================================================
-   4. HEADER GLASSMORPHISM
+   4. HEADER GLASSMORPHISM (CÁPSULA FLOTANTE FIJA AL HACER SCROLL)
    ========================================================================== */
-.sitio-header{
-    background-color:rgba(8,28,52,.65);
-    padding:20px 0;
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    border-bottom:1px solid rgba(255,255,255,.05);
+.sitio-header {
+    background-color: rgba(8, 28, 52, .65);
+    padding: 20px 0;
+    
+    /* Mantiene el menú pegajoso con separación al bajar por la página */
+    position: sticky;
+    top: 20px; /* Se queda congelado a 20px del borde superior al hacer scroll */
+    
+    /* Margen inicial para que no aparezca pegado al cargar la página */
+    margin-top: 20px; 
+    
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* Convierte la barra en una cápsula con bordes redondeados */
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    
+    /* Centra la barra flotante en la pantalla y le da espacio a los lados */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 5rem); /* Evita que choque con los bordes de la pantalla */
 }
 
 .header-contenedor{
