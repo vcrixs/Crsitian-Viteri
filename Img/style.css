@@ -1479,3 +1479,55 @@ body{
         gap: 20px !important;
     }
 }
+zzzz
+/* ==========================================================================
+   ESTILOS INTERNOS DE PORCENTAJES PARA CÍRCULOS DE HABILIDADES
+   ========================================================================== */
+
+/* Asegurar la correcta distribución vertical del texto dentro del círculo */
+.contenido-original {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+/* Espaciado del título */
+.habilidad-titulo {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin: 4px 0 8px 0 !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+/* Contenedor de la barra de progreso estilo cristal esmerilado oscuro */
+.mini-barra-contenedor {
+    width: 65% !important;
+    height: 6px !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin-bottom: 6px !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Relleno con un degradado cian/azul de alta tecnología */
+.mini-barra-relleno {
+    height: 100% !important;
+    background: linear-gradient(90deg, #0052d4, #00e5ff) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+/* Estilo formal para el texto numérico del porcentaje */
+.habilidad-porcentaje {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #00e5ff !important; /* Color de acento turquesa */
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
+}
