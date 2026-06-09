@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Liquid Glass | Cristian</title>
-    <!-- Tipografía Inter para un estilo editorial minimalista -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,64 +11,65 @@
 </head>
 <body>
 
-    <!-- FONDO LÍQUIDO GLOBAL: Formas desenfocadas que crean el ambiente marino en toda la web -->
     <div class="fondo-liquido-global">
         <div class="orbe-fluido orbe-oceano"></div>
         <div class="orbe-fluido orbe-profundo"></div>
         <div class="orbe-fluido orbe-acento"></div>
     </div>
 
-    <!-- HEADER: Barra de navegación en cristal puro -->
     <header class="sitio-header">
         <div class="header-contenedor">
             <div class="logo">V.CRIXS<span class="punto-acento"></span></div>
             <nav class="navegacion-principal">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
+                <a href="#inicio" class="enlace-nav activo">Inicio</a>
+                <a href="#sobre-mi" class="enlace-nav">Sobre mí</a>
+                <a href="#proyectos" class="enlace-nav">Proyectos</a>
+                <a href="#habilidades" class="enlace-nav">Habilidades</a>
+                <a href="#contacto" class="enlace-nav">Contacto</a>
             </nav>
         </div>
     </header>
 
     <main>
 
-        <!-- SECCIÓN HERO: Presentación principal -->
-        <section id="inicio" class="seccion-transparente">
-            <div class="hero-contenedor">
-                <div class="hero-columna-texto">
-                    <span class="badge-vidrio">Disponible para proyectos</span>
-                    <h1>Hola, soy <span class="texto-gradiente-marino">Cristian</span></h1>
-                    <h2>Multimedia y Producción Audiovisual</h2>
-                    <p class="descripcion-hero">Especializado en diseño, ilustración y edición de video, 
-                        mi labor es traducir ideas en piezas concretas que mantengan un equilibrio entre 
-                        estética y significado. Dedico especial atención al color y al ritmo de cada entrega 
-                        para asegurar que el mensaje final se sienta profesional. Mi compromiso es
-                        transformar tu visión en una realidad visual que cumpla con tus objetivos 
-                        de comunicación.</p>
-                    <div class="hero-acciones">
-                        <a href="#proyectos" class="boton-accion-principal">Ver proyectos</a>
+        <section id="inicio" class="seccion-pantalla-completa">
+            <div class="contenedor-centrado">
+                <span class="saludo-badge">Hola, soy Cristian</span>
+                <h1 class="titulo-principal">Multimedia & <br><span class="texto-gradiente">Audiovisual</span> Production</h1>
+                <p class="descripcion-hero">Estudiante de la Universidad Politécnica Estatal del Carchi. Apasionado por la fotografía de paisajes, la composición visual y la narrativa audiovisual.</p>
+                <div class="botones-accion">
+                    <a href="#proyectos" class="boton-primario">Ver Portafolio</a>
+                    <a href="#contacto" class="boton-secundario">Contáctame</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="seccion-transparente">
+            <div class="contenedor-general grid-dos-columnas">
+                <div class="bloque-texto">
+                    <span class="subtitulo-seccion">Mi Enfoque</span>
+                    <h2 class="titulo-seccion">Creatividad detrás del lente y la pantalla</h2>
+                    <p>Me enfoco en capturar narrativas sociales a través de la fotografía móvil y el diseño conceptual. Busco que cada pieza audiovisual refleje un equilibrio armónico entre estética y significado profundo.</p>
+                    <div class="detalles-personales">
+                        <div class="dato-perfil"><strong>Institución:</strong> Universidad Politécnica Estatal del Carchi (UPEC)</div>
+                        <div class="dato-perfil"><strong>Especialidad:</strong> Producción Multimedia, Edición Audiovisual y Diseño Editorial</div>
                     </div>
                 </div>
-                <!-- Columna de imagen con el efecto dinámico y líquido -->
-                <div class="hero-columna-imagen">
-                    <div class="marco-foto-liquido">
-                        <img src="https://i.pinimg.com/736x/88/a7/62/88a762be385f8652f162ab2fbb8b700f.jpg" alt="Fotografía dinámica de perfil" class="foto-perfil-fluida">
+                <div class="bloque-visual">
+                    <div class="tarjeta-foto-perfil">
+                        <div class="placeholder-foto"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS: Tarjetas Glassmorphism -->
         <section id="proyectos" class="seccion-transparente">
             <div class="contenedor-general">
                 <span class="subtitulo-seccion-claro">Portafolio</span>
-                <h2 class="titulo-seccion-claro">Mis Proyectos</h2>
-                <div class="grid-tres-columnas">
-                    <!-- Tarjeta de Cristal 1 -->
-                    <article class="tarjeta-vidrio">
+                <h2 class="titulo-seccion-claro" id="titulo-portafolio">Mis Proyectos</h2>
+                
+                <div id="vista-menu-proyectos" class="grid-tres-columnas">
+                    <article class="tarjeta-vidrio" onclick="mostrarGaleria('diseno', 'Diseño Comercial')">
                         <div class="proyecto-contenedor-imagen">
                             <img src="Imagenes/Portada.png" alt="Imagen diseño" class="proyecto-imagen">
                         </div>
@@ -78,112 +78,128 @@
                             <p>Soluciones visuales pensadas para comunicar con claridad, equilibrio y una identidad que impacta.</p>
                         </div>
                     </article>
-                    <!-- Tarjeta de Cristal 2 -->
-                    <article class="tarjeta-vidrio">
+
+                    <article class="tarjeta-vidrio" onclick="mostrarGaleria('ilustracion', 'Ilustración Digital')">
                         <div class="proyecto-contenedor-imagen">
-                            <img src="Imagenes/Ilustracion1.jpg" alt="Imagen ilustracion class="proyecto-imagen">
+                            <img src="Imagenes/Ilustracion1.jpg" alt="Imagen ilustracion" class="proyecto-imagen">
                         </div>
                         <div class="proyecto-contenido">
                             <h3>Ilustración</h3>
                             <p>Exploración de conceptos a través de formas y color, transformando ideas en piezas con personalidad propia.</p>
                         </div>
                     </article>
-                    <!-- Tarjeta de Cristal 3 -->
-                    <article class="tarjeta-vidrio">
+
+                    <article class="tarjeta-vidrio" onclick="mostrarGaleria('edicion', 'Edición Audiovisual')">
                         <div class="proyecto-contenedor-imagen">
                             <img src="Imagenes/Edicion1.jpeg" alt="Imagen representativa de proyecto" class="proyecto-imagen">
                         </div>
                         <div class="proyecto-contenido">
-                            <h3>Edicion</h3>
+                            <h3>Edición</h3>
                             <p>Narrativa audiovisual donde el ritmo, la composición y el detalle se unen para contar historias reales.</p>
                         </div>
                     </article>
                 </div>
+
+                <div id="vista-galeria-detalle" class="galeria-detalle-oculta">
+                    <button class="boton-regresar" onclick="regresarAlMenu()">← Volver a Proyectos</button>
+                    
+                    <div id="galeria-diseno" class="subgaleria-contenido">
+                        <div class="grid-wireframe-simetrico">
+                            <div class="bloque-galeria grande"><img src="Imagenes/Diseno1.jpg" alt="Proyecto Diseño 1"></div>
+                            <div class="bloque-galeria grande"><img src="Imagenes/Diseno2.jpg" alt="Proyecto Diseño 2"></div>
+                            <div class="bloque-galeria grande"><img src="Imagenes/Diseno3.jpg" alt="Proyecto Diseño 3"></div>
+                            <div class="bloque-galeria grande"><img src="Imagenes/Diseno4.jpg" alt="Proyecto Diseño 4"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Diseno5.jpg" alt="Proyecto Diseño 5"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Diseno6.jpg" alt="Proyecto Diseño 6"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Diseno7.jpg" alt="Proyecto Diseño 7"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Diseno8.jpg" alt="Proyecto Diseño 8"></div>
+                        </div>
+                    </div>
+
+                    <div id="galeria-ilustracion" class="subgaleria-contenido">
+                        <div class="grid-wireframe-mosaico">
+                            <div class="bloque-galeria"><img src="Imagenes/Ilustracion1.jpg" alt="Ilustración 1"></div>
+                            <div class="bloque-galeria ancho"><img src="Imagenes/Ilustracion2.jpg" alt="Ilustración 2"></div>
+                            <div class="bloque-galeria"><img src="Imagenes/Ilustracion3.jpg" alt="Ilustración 3"></div>
+                            <div class="bloque-galeria"><img src="Imagenes/Ilustracion4.jpg" alt="Ilustración 4"></div>
+                            <div class="bloque-galeria ancho"><img src="Imagenes/Ilustracion5.jpg" alt="Ilustración 5"></div>
+                            <div class="bloque-galeria"><img src="Imagenes/Ilustracion6.jpg" alt="Ilustración 6"></div>
+                        </div>
+                    </div>
+
+                    <div id="galeria-edicion" class="subgaleria-contenido">
+                        <div class="grid-wireframe-simetrico">
+                            <div class="bloque-galeria grande"><img src="Imagenes/Edicion1.jpeg" alt="Edición 1"></div>
+                            <div class="bloque-galeria grande"><img src="Imagenes/Edicion2.jpg" alt="Edición 2"></div>
+                            <div class="bloque-galeria grande"><img src="Imagenes/Edicion3.jpg" alt="Edición 3"></div>
+                            <div class="bloque-galeria grande"><img src="Imagenes/Edicion4.jpg" alt="Edición 4"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Edicion5.jpg" alt="Edición 5"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Edicion6.jpg" alt="Edición 6"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Edicion7.jpg" alt="Edición 7"></div>
+                            <div class="bloque-galeria chico"><img src="Imagenes/Edicion8.jpg" alt="Edición 8"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- SECCIÓN HABILIDADES: Círculos perfectos interactivos -->
         <section id="habilidades" class="seccion-transparente">
-    <div class="contenedor-general">
-        <span class="subtitulo-seccion-claro">Skills</span>
-        <h2 class="titulo-seccion-claro">Habilidades</h2>
-        
-        <div class="grid-cuatro-columnas">
-            
-            <div class="tarjeta-habilidad-circular">
-                <div class="carrusel-imagenes">
-                    <img src="https://i.pinimg.com/736x/c1/fa/78/c1fa78ecf88b1c8d5422a535ae498fd9.jpg" alt="img">
-                    <img src="https://i.pinimg.com/736x/de/ae/c0/deaec084c9c16f16de93a0afab4a6d61.jpg" alt="img">
-                    <img src="https://i.pinimg.com/736x/4c/8c/1f/4c8c1f7e3ed668b6ac8784ba5e105c0c.jpg" alt="img">
-                </div>
-                <div class="overlay"></div>
-                <div class="contenido-original">
-                    <span class="habilidad-numero">01</span>
-                    <p>Edición de Video</p>
-                </div>
-            </div>
-
-            <div class="tarjeta-habilidad-circular">
-                <div class="carrusel-imagenes">
-                    <img src="https://i.pinimg.com/1200x/8a/47/91/8a4791a7d1473ccbdbea0e09acb5d9ab.jpg" alt="img">
-                    <img src="https://i.pinimg.com/1200x/b0/d1/21/b0d1214d799587ec8fea54da7fddf837.jpg" alt="img">
-                    <img src="https://i.pinimg.com/1200x/26/f1/1c/26f11c427c50de168f78401d4f498fe6.jpg" alt="img">
-                </div>
-                <div class="overlay"></div>
-                <div class="contenido-original">
-                    <span class="habilidad-numero">02</span>
-                    <p>Ilustración Digital</p>
-                </div>
-            </div>
-
-            <div class="tarjeta-habilidad-circular">
-                <div class="carrusel-imagenes">
-                    <img src="https://i.pinimg.com/1200x/a8/bf/d5/a8bfd58bc2e012e5ca684f12086ea9bb.jpg" alt="img">
-                    <img src="https://i.pinimg.com/1200x/61/fe/4d/61fe4d1f0fee2e546c17f668817132e7.jpg" alt="img">
-                    <img src="https://i.pinimg.com/736x/da/aa/5a/daaa5a9f1c202cb5a9684795906637dd.jpg" alt="img">
-                </div>
-                <div class="overlay"></div>
-                <div class="contenido-original">
-                    <span class="habilidad-numero">03</span>
-                    <p>Diseño UI/UX</p>
-                </div>
-            </div>
-
-            <div class="tarjeta-habilidad-circular">
-                <div class="carrusel-imagenes">
-                    <img src="https://i.pinimg.com/736x/cc/0c/21/cc0c210c34e8bd877e378590c69bf14a.jpg" alt="img">
-                    <img src="https://i.pinimg.com/originals/44/bd/f6/44bdf61272ecc30b749eb738a664d2b3.gif" alt="img">
-                    <img src="https://i.pinimg.com/1200x/2a/44/e8/2a44e874d9c5d05c31bbc502b5d81ac3.jpg" alt="img">
-                </div>
-                <div class="overlay"></div>
-                <div class="contenido-original">
-                    <span class="habilidad-numero">04</span>
-                    <p>Animación 2D</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- SECCIÓN CONTACTO: Formulario inmerso en cristal -->
-        <section id="contacto" class="seccion-transparente">
-            <div class="contacto-contenedor">
-                <div class="contacto-columna-info">
-                    <span class="badge-vidrio">Hablemos</span>
-                    <h2 class="titulo-contacto">¿Tienes un proyecto en mente?</h2>
-                    <p class="descripcion-contacto">Estoy disponible para colaborar en tu próximo desafío. 
-                        Si buscas darle forma a tus ideas con una identidad visual clara y profesional, hablemos. 
-                        Cuéntame sobre lo que tienes en mente y empezaremos a darle vida.</p>
-                </div>
-                <div class="contacto-columna-formulario">
-                    <form action="#" method="POST" class="formulario-contacto">
-                        <div class="campo-formulario">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Lorem ipsum">
+            <div class="contenedor-general">
+                <span class="subtitulo-seccion">Mis Herramientas</span>
+                <h2 class="titulo-seccion">Competencias Técnicas</h2>
+                <div class="grid-cuatro-columnas">
+                    <div class="tarjeta-habilidad-circular">
+                        <div class="carrusel-imagenes"></div>
+                        <div class="overlay"></div>
+                        <div class="contenido-original">
+                            <span class="porcentaje-habilidad">90%</span>
+                            <h4>Fotografía</h4>
                         </div>
-                        <div class="campo-formulario">
-                            <label for="correo">Correo electrónico</label>
-                            <input type="email" id="correo" name="correo" required placeholder="lorem@ipsum.com">
+                    </div>
+                    <div class="tarjeta-habilidad-circular">
+                        <div class="carrusel-imagenes"></div>
+                        <div class="overlay"></div>
+                        <div class="contenido-original">
+                            <span class="porcentaje-habilidad">85%</span>
+                            <h4>Edición Video</h4>
+                        </div>
+                    </div>
+                    <div class="tarjeta-habilidad-circular">
+                        <div class="carrusel-imagenes"></div>
+                        <div class="overlay"></div>
+                        <div class="contenido-original">
+                            <span class="porcentaje-habilidad">80%</span>
+                            <h4>Diseño Web</h4>
+                        </div>
+                    </div>
+                    <div class="tarjeta-habilidad-circular">
+                        <div class="carrusel-imagenes"></div>
+                        <div class="overlay"></div>
+                        <div class="contenido-original">
+                            <span class="porcentaje-habilidad">75%</span>
+                            <h4>Ilustración</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion-transparente">
+            <div class="contenedor-general">
+                <span class="subtitulo-seccion">¿Hablamos?</span>
+                <h2 class="titulo-seccion">Iniciar un Proyecto</h2>
+                <div class="contenedor-formulario-vidrio">
+                    <form action="#" method="POST" class="formulario-contacto">
+                        <div class="grid-dos-columnas-form">
+                            <div class="campo-formulario">
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" required placeholder="Su nombre...">
+                            </div>
+                            <div class="campo-formulario">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com">
+                            </div>
                         </div>
                         <div class="campo-formulario">
                             <label for="mensaje">Mensaje</label>
@@ -197,27 +213,65 @@
 
     </main>
 
-    <!-- FOOTER: Cierre limpio -->
     <footer class="sitio-footer">
-    <div class="footer-contenedor">
-        <p class="copyright">&copy; 2026 Cristian. Todos los derechos reservados.</p>
-        <div class="redes-sociales">
-            <a href="https://instagram.com/v.crixs" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="icon-ig">IG</i>
-            </a>
-            <a href="https://tiktok.com/@v.crixs" target="_blank" rel="noopener" aria-label="TikTok">
-                <i class="icon-tt">TK</i>
-            </a>
-            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="icon-gh">GH</i>
-            </a>
-            <a href="https://www.behance.net/cristiaviteri" target="_blank" rel="noopener" aria-label="Behance">
-                <i class="icon-be">BE</i>
-            </a>
+        <div class="footer-contenedor">
+            <p class="copyright">&copy; 2026 Cristian. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="https://instagram.com/v.crixs" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class=\"icon-ig\">IG</i>
+                </a>
+                <a href="https://tiktok.com/@v.crixs" target="_blank" rel="noopener" aria-label="TikTok">
+                    <i class=\"icon-tt\">TK</i>
+                </a>
+                <a href="https://github.com/tu-usuario" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class=\"icon-gh\">GH</i>
+                </a>
+                <a href="https://www.behance.net/cristiaviteri" target="_blank" rel="noopener" aria-label="Behance">
+                    <i class=\"icon-be\">BE</i>
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
     </footer>
 
+    <script>
+        const tituloOriginal = "Mis Proyectos";
+
+        function mostrarGaleria(idGaleria, nombreCategoria) {
+            // 1. Ocultar el menú de tarjetas principal con transiciones limpias
+            document.getElementById('vista-menu-proyectos').style.display = 'none';
+            
+            // 2. Activar el contenedor general de detalles
+            const contenedorDetalle = document.getElementById('vista-galeria-detalle');
+            contenedorDetalle.className = 'galeria-detalle-activa';
+            
+            // 3. Ocultar todas las sub-galerías primero para limpiar estados previos
+            const subgalerias = document.querySelectorAll('.subgaleria-contenido');
+            subgalerias.forEach(galeria => galeria.classList.remove('activa'));
+            
+            // 4. Hacer visible la sub-galería correspondiente al clic
+            document.getElementById(`galeria-${idGaleria}`).classList.add('activa');
+            
+            // 5. Cambiar dinámicamente el título de la sección principal
+            document.getElementById('titulo-portafolio').innerText = nombreCategoria;
+            
+            // 6. Desplazar la vista de forma sutil al inicio de la sección
+            document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function regresarAlMenu() {
+            // 1. Ocultar el contenedor de detalles de las imágenes
+            const contenedorDetalle = document.getElementById('vista-galeria-detalle');
+            contenedorDetalle.className = 'galeria-detalle-oculta';
+            
+            // 2. Restaurar el menú de tres columnas principal
+            document.getElementById('vista-menu-proyectos').style.display = 'grid';
+            
+            // 3. Devolver el título original del portafolio
+            document.getElementById('titulo-portafolio').innerText = tituloOriginal;
+            
+            // 4. Suavizar el desplazamiento de regreso
+            document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
