@@ -1166,23 +1166,23 @@ body{
 @keyframes morphing-liquido {
 
     0%{
-        border-radius: 45% 55% 50% 50%;
+        border-radius: 40% 60% 50% 50%;
     }
 
     25%{
-        border-radius: 50% 48% 52% 50%;
+        border-radius: 55% 45% 60% 40%;
     }
 
     50%{
-        border-radius: 52% 48% 45% 55%;
+        border-radius: 60% 40% 45% 55%;
     }
 
     75%{
-        border-radius: 48% 52% 55% 45%;
+        border-radius: 45% 55% 40% 60%;
     }
 
     100%{
-        border-radius: 45% 55% 50% 50%;
+        border-radius: 40% 60% 50% 50%;
     }
 }
 body{
@@ -1215,7 +1215,7 @@ body{
 .orbe-oceano{
     width:60vw;
     height:60vw;
-    opacity:.08;
+    opacity:.15;
 }
 
 .orbe-profundo{
