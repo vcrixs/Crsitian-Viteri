@@ -1150,26 +1150,39 @@ body{
 
     z-index:-1;
 }
+.marco-foto-liquido,
+.foto-perfil-fluida{
+    border-radius: 48%;
+}
+
+.marco-foto-liquido{
+    animation: morphing-liquido 14s ease-in-out infinite;
+}
+
+.foto-perfil-fluida{
+    animation: morphing-liquido 14s ease-in-out infinite;
+}
+
 @keyframes morphing-liquido {
 
     0%{
-        border-radius: 42%;
+        border-radius: 45% 55% 50% 50%;
     }
 
     25%{
-        border-radius: 45%;
+        border-radius: 50% 48% 52% 50%;
     }
 
     50%{
-        border-radius: 48%;
+        border-radius: 52% 48% 45% 55%;
     }
 
     75%{
-        border-radius: 45%;
+        border-radius: 48% 52% 55% 45%;
     }
 
     100%{
-        border-radius: 42%;
+        border-radius: 45% 55% 50% 50%;
     }
 }
 body{
