@@ -158,24 +158,27 @@ body {
 /* ==========================================================================
    4. HEADER GLASSMORPHISM
    ========================================================================== */
-.sitio-header {
-    background-color: rgba(8, 28, 52, 0.6); /* Azul marino muy transparente */
-    padding: 1.2rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(24px); 
-    -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(243, 243, 243, 0.08);
+.sitio-header{
+    background-color:rgba(8,28,52,.65);
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 
-.header-contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header-contenedor{
+    max-width:1200px;
+    margin:auto;
+    padding:0 2.5rem;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo {
@@ -224,94 +227,96 @@ body {
 /* ==========================================================================
    5. SECCIÓN HERO Y FOTO LÍQUIDA (MORPHING)
    ========================================================================== */
-.hero-contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5rem;
+/* ==========================================================================
+   HERO NUEVO ESTILO WIREFRAME
+   ========================================================================== */
+
+.hero-contenedor{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 2.5rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:6rem;
 }
 
-.hero-columna-texto {
-    flex: 1.2;
+.hero-columna-texto{
+    flex:1;
+    max-width:560px;
 }
 
-.hero-columna-texto h1 {
-    font-size: 3.8rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 0.8rem;
-    letter-spacing: -2px;
+.hero-columna-texto h1{
+    font-size:4.3rem;
+    font-weight:800;
+    line-height:1.05;
+    margin-bottom:15px;
+    letter-spacing:-2px;
+    color:#F3F3F3;
 }
 
-/* Gradiente inverso claro para destacar sobre fondo oscuro */
-.texto-gradiente-marino {
-    /* Definimos el degradado */
-    background: linear-gradient(45deg, #F3F3F3, #DCDCDC);
-    
-    /* Versión estándar (para navegadores modernos) */
-    background-clip: text;
-    
-    /* Versión para navegadores basados en WebKit (Chrome, Safari, Edge) */
-    -webkit-background-clip: text;
-    
-    /* Hacemos transparente el color del texto para que el fondo se vea a través */
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+.hero-columna-texto h2{
+    font-size:1.4rem;
+    font-weight:500;
+    color:#E7E5DD;
+    margin-bottom:25px;
 }
 
-.hero-columna-texto h2 {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #E7E5DD;
-    margin-bottom: 2rem;
+.descripcion-hero{
+    max-width:520px;
+    font-size:1rem;
+    line-height:1.9;
+    color:#d7d7d7;
+    margin-bottom:35px;
 }
 
-.descripcion-hero {
-    font-size: 1.1rem;
-    color: #DCDCDC;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-    max-width: 540px;
+.hero-acciones{
+    margin-top:10px;
 }
 
-.hero-columna-imagen {
-    flex: 0.8;
-    display: flex;
-    justify-content: center;
+.boton-accion-principal{
+    padding:14px 55px;
+    border-radius:10px;
 }
 
-/* CONTENEDOR DE IMAGEN: Efecto líquido dinámico */
-.marco-foto-liquido {
-    width: 380px;
-    height: 380px;
-    background: rgba(243, 243, 243, 0.05); /* Cristal puro */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    /* Borde simulando el reflejo de la luz en el agua */
-    border: 2px solid rgba(243, 243, 243, 0.2);
-    border-top: 2px solid rgba(243, 243, 243, 0.4);
-    padding: 15px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    /* Animación clave para la forma fluida */
-    animation: morphing-liquido 8s ease-in-out infinite;
+.hero-columna-imagen{
+    flex:0 0 360px;
+
+    display:flex;
+    justify-content:center;
 }
 
-.foto-perfil-fluida {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* La imagen interna hereda la misma animación para moverse junto al marco */
-    animation: morphing-liquido 8s ease-in-out infinite;
+.marco-foto-liquido{
+    width:330px;
+    height:430px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+
+    animation:none;
+
+    padding:0;
 }
 
-/* Keyframes que alternan los radios de los bordes para crear un blob orgánico */
-@keyframes morphing-liquido {
-    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    50% { border-radius: 30% 70% 70% 30% / 50% 60% 30% 60%; }
-    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+.foto-perfil-fluida{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:28px;
+    animation:none;
 }
 
 /* ==========================================================================
@@ -719,4 +724,20 @@ body {
     height: 100%;
     object-fit: cover;
     display: block; /* Elimina espacios vacíos debajo de la imagen */
+}
+@media (min-width: 1200px){
+
+    .hero-contenedor{
+        min-height:75vh;
+    }
+
+    .hero-columna-texto{
+        padding-left:20px;
+    }
+
+    .marco-foto-liquido{
+        width:360px;
+        height:470px;
+    }
+
 }
