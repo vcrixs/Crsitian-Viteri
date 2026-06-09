@@ -1148,3 +1148,19 @@ body{
         border-radius: 42%;
     }
 }
+body{
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(60,120,255,.15),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        180deg,
+        #020812 0%,
+        #071B34 40%,
+        #081C34 70%,
+        #020812 100%
+    );
+}
