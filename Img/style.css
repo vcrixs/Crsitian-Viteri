@@ -41,33 +41,57 @@ body {
 .orbe-fluido {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px); /* Desenfoque masivo para fusionar colores */
-    animation: flotar-suave 20s infinite alternate ease-in-out;
+    filter: blur(140px); /* Desenfoque masivo para fusionar colores */
+    animation: flotar-suave 25s infinite alternate ease-in-out;
 }
 
 .orbe-oceano {
-    width: 50vw;
-    height: 50vw;
-    background-color: #133C64; /* Azul marino medio/oceánico */
-    top: -10%;
-    left: -10%;
+    width: 55vw;
+    height: 55vw;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(40,100,180,.35),
+        rgba(40,100,180,.08) 60%,
+        transparent
+    );
+
+    top: -15%;
+    left: -15%;
 }
 
 .orbe-profundo {
-    width: 40vw;
-    height: 40vw;
-    background-color: #081C34; /* Añade profundidad oscura */
+    width: 45vw;
+    height: 45vw;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(10,30,60,.45),
+        transparent
+    );
+
     bottom: -20%;
-    right: -10%;
+    right: -15%;
+
     animation-delay: -5s;
 }
 
 .orbe-acento {
-    width: 30vw;
-    height: 30vw;
-    background-color: rgba(231, 229, 221, 0.08); /* Brillo tenue del color claro */
-    top: 40%;
-    left: 60%;
+    width: 25vw;
+    height: 25vw;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(120,180,255,.10),
+        transparent
+    );
+
+    top: 35%;
+    left: 65%;
+
     animation-delay: -10s;
 }
 
