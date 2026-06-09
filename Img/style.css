@@ -1188,3 +1188,27 @@ body{
         #020812 100%
     );
 }
+body{
+    background:
+    linear-gradient(
+        180deg,
+        #020812 0%,
+        #071B34 40%,
+        #081C34 70%,
+        #020812 100%
+    );
+}
+
+.orbe-oceano{
+    width:60vw;
+    height:60vw;
+    opacity:.08;
+}
+
+.orbe-profundo{
+    display:none;
+}
+
+.orbe-acento{
+    display:none;
+}
