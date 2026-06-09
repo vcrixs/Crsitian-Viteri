@@ -177,8 +177,17 @@ body {
     padding:0 2.5rem;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+}
+
+.logo{
+    color:#F3F3F3;
+    font-weight:800;
+    font-size:1.3rem;
+}
+
+.navegacion-principal{
+    margin-left:auto;
 }
 
 .logo {
