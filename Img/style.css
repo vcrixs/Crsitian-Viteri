@@ -1446,3 +1446,36 @@ body{
     padding-top: 100px !important; /* Colchón de seguridad para empujar los videos hacia abajo */
     box-sizing: border-box !important;
 }
+/* ==========================================================================
+   FORZADO HORIZONTAL PARA TARJETAS DE PROYECTOS PRINCIPALES
+   ========================================================================== */
+
+/* 1. Forzar tres columnas horizontales exactas para el menú de inicio */
+.grid-tres-columnas {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Tres columnas iguales en horizontal */
+    gap: 30px !important; /* Espaciado uniforme entre tarjetas */
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. Asegurar que las tarjetas individuales se adapten simétricamente */
+.tarjeta-vidrio {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Ajuste adaptativo para dispositivos móviles */
+@media (max-width: 768px) {
+    .grid-tres-columnas {
+        grid-template-columns: 1fr !important; /* Se vuelven verticales solo en celulares */
+        gap: 20px !important;
+    }
+}
