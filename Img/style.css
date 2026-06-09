@@ -1481,53 +1481,71 @@ body{
 }
 zzzz
 /* ==========================================================================
-   ESTILOS INTERNOS DE PORCENTAJES PARA CÍRCULOS DE HABILIDADES
+   ALINEACIÓN DE PORCENTAJES DEBAJO DE LOS CÍRCULOS
    ========================================================================== */
 
-/* Asegurar la correcta distribución vertical del texto dentro del círculo */
+/* Contenedor vertical que agrupa el círculo y su respectiva barra inferior */
+.bloque-habilidad-completo {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+}
+
+/* Restaurar el contenedor interno del círculo original limpio */
 .contenido-original {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 10px !important;
+    height: 100% !important;
+    padding: 20px !important;
     box-sizing: border-box !important;
 }
 
-/* Espaciado del título */
 .habilidad-titulo {
     font-size: 16px !important;
     font-weight: 600 !important;
-    margin: 4px 0 8px 0 !important;
+    margin-top: 5px !important;
     color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
     text-align: center;
 }
 
-/* Contenedor de la barra de progreso estilo cristal esmerilado oscuro */
+/* Contenedor del porcentaje situado estrictamente abajo */
+.bloque-progreso-inferior {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 20px !important; /* Espacio de separación debajo de la esfera */
+}
+
+/* Barra de progreso de cristal esmerilado horizontal */
 .mini-barra-contenedor {
-    width: 65% !important;
-    height: 6px !important;
-    background: rgba(0, 0, 0, 0.5) !important;
+    width: 70% !important;
+    height: 8px !important;
+    background: rgba(5, 16, 32, 0.7) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 10px !important;
     overflow: hidden !important;
-    margin-bottom: 6px !important;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 8px !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Relleno con un degradado cian/azul de alta tecnología */
+/* Línea de llenado con degradado responsivo */
 .mini-barra-relleno {
     height: 100% !important;
     background: linear-gradient(90deg, #0052d4, #00e5ff) !important;
     border-radius: 10px !important;
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 
-/* Estilo formal para el texto numérico del porcentaje */
+/* Texto del porcentaje de dominio técnico */
 .habilidad-porcentaje {
-    font-size: 14px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
-    color: #00e5ff !important; /* Color de acento turquesa */
-    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
+    color: #00e5ff !important;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.4);
 }
