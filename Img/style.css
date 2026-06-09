@@ -1374,3 +1374,20 @@ body{
     /* Colchón de aire perimetral para que los bordes de la obra respiren dentro del marco */
     padding: 15px; 
 }
+/* ... Todos los estilos anteriores de su portafolio ... */
+
+
+/* ==========================================================================
+   CORRECCIÓN DE ESCALADO COMPLETO PARA IMÁGENES INTERNAS
+   ========================================================================== */
+
+.cuadro-imagen-interno img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important; /* Fuerza a la imagen a encuadrarse por completo */
+    object-position: center !important;
+    padding: 15px !important;
+    box-sizing: border-box !important; /* Asegura que el padding no altere el tamaño */
+}
