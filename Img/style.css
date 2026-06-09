@@ -750,3 +750,319 @@ body {
     }
 
 }
+/* ========================================
+   APPLE / VISION OS UPGRADE
+======================================== */
+
+:root{
+    --azul-base:#071B34;
+    --azul-sec:#0E2A4A;
+    --azul-acento:#2F6DFF;
+    --blanco:#F5F7FA;
+    --glass:rgba(255,255,255,.08);
+    --glass-hover:rgba(255,255,255,.12);
+}
+
+body{
+    background:
+    radial-gradient(circle at 20% 20%, rgba(47,109,255,.15), transparent 35%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 30%),
+    linear-gradient(180deg,#061425,#081C34 40%,#071B34 100%);
+}
+
+/* ==========================
+   HEADER PREMIUM
+========================== */
+
+.sitio-header{
+    width:95%;
+    max-width:1200px;
+    margin:15px auto;
+    border-radius:24px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero-columna-texto h1{
+    font-size:5rem;
+    line-height:1;
+    letter-spacing:-3px;
+}
+
+.hero-columna-texto h2{
+    font-size:1.5rem;
+    opacity:.8;
+    margin-top:1rem;
+}
+
+.descripcion-hero{
+    max-width:600px;
+    opacity:.75;
+}
+
+/* ==========================
+   FOTO PRINCIPAL
+========================== */
+
+.marco-foto-liquido{
+    position:relative;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+    transition:all .6s ease;
+}
+
+.marco-foto-liquido:hover{
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    box-shadow:
+    0 40px 80px rgba(0,0,0,.45),
+    0 0 40px rgba(47,109,255,.15);
+}
+
+.marco-foto-liquido::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.35),
+        transparent 30%,
+        transparent 70%,
+        rgba(255,255,255,.1)
+    );
+
+    border-radius:inherit;
+    pointer-events:none;
+}
+
+/* ==========================
+   TARJETAS APPLE
+========================== */
+
+.tarjeta-vidrio{
+    position:relative;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.25);
+
+    transition:
+    transform .5s cubic-bezier(.16,1,.3,1),
+    box-shadow .5s ease,
+    background .5s ease;
+}
+
+.tarjeta-vidrio::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transition:1s;
+}
+
+.tarjeta-vidrio:hover::before{
+    left:120%;
+}
+
+.tarjeta-vidrio:hover{
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+    background:rgba(255,255,255,.09);
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.35),
+    0 0 25px rgba(47,109,255,.15);
+}
+
+.tarjeta-vidrio:hover .proyecto-imagen{
+    transform:scale(1.08);
+}
+
+/* ==========================
+   BOTONES PREMIUM
+========================== */
+
+.boton-accion-principal,
+.boton-enviar{
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #dfe8ff
+    );
+
+    color:#081C34;
+
+    font-weight:700;
+
+    transition:.4s ease;
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,.15);
+}
+
+.boton-accion-principal:hover,
+.boton-enviar:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.03);
+
+    box-shadow:
+    0 20px 40px rgba(255,255,255,.2);
+}
+
+/* ==========================
+   HABILIDADES
+========================== */
+
+.tarjeta-habilidad-circular{
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+    transition:.5s ease;
+}
+
+.tarjeta-habilidad-circular:hover{
+
+    transform:
+    scale(1.08)
+    translateY(-8px);
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.4),
+    0 0 20px rgba(47,109,255,.2);
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+.contacto-columna-formulario{
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(30px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.3);
+}
+
+.campo-formulario input,
+.campo-formulario textarea{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus{
+
+    border-color:#4c8fff;
+
+    box-shadow:
+    0 0 0 4px rgba(76,143,255,.15);
+}
+
+/* ==========================
+   TITULOS
+========================== */
+
+.titulo-seccion-claro,
+.titulo-contacto{
+
+    letter-spacing:-2px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #d5def1
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#081C34;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#244c7e;
+    border-radius:50px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#3b6aa7;
+}
