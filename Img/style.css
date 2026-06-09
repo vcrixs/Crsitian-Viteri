@@ -41,243 +41,332 @@ body {
 .orbe-fluido {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.45;
-    mix-blend-mode: screen;
+    filter: blur(100px); /* Desenfoque masivo para fusionar colores */
+    animation: flotar-suave 20s infinite alternate ease-in-out;
 }
 
 .orbe-oceano {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #0e3a6c 0%, transparent 70%);
+    width: 50vw;
+    height: 50vw;
+    background-color: #133C64; /* Azul marino medio/oceánico */
     top: -10%;
     left: -10%;
 }
 
 .orbe-profundo {
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, #051329 0%, transparent 70%);
+    width: 40vw;
+    height: 40vw;
+    background-color: #081C34; /* Añade profundidad oscura */
     bottom: -20%;
     right: -10%;
+    animation-delay: -5s;
 }
 
 .orbe-acento {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, #1a4a84 0%, transparent 70%);
+    width: 30vw;
+    height: 30vw;
+    background-color: rgba(231, 229, 221, 0.08); /* Brillo tenue del color claro */
     top: 40%;
-    left: 50%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+/* Animación de movimiento lento para el fondo */
+@keyframes flotar-suave {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(10%, 10%) scale(1.1); }
 }
 
 /* ==========================================================================
-   3. MAQUETACIÓN ESTRUCTURAL Y DISEÑO DE COMPONENTES DE INTERFAZ
+   3. ESTILOS REUTILIZABLES Y BOTONES
    ========================================================================== */
-.contenedor-general {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
+.seccion-transparente {
+    padding: 8rem 0;
+    position: relative;
+    z-index: 2;
 }
 
-/* Cabecera del portafolio con efecto esmerilado de alta gama */
+.contenedor-general {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.titulo-seccion-claro {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    font-weight: 800;
+    color: #F3F3F3;
+    letter-spacing: -1px;
+}
+
+.subtitulo-seccion-claro {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #E7E5DD; 
+    margin-bottom: 0.5rem;
+}
+
+.punto-acento {
+    color: #E7E5DD;
+}
+
+/* Botones con estilo premium y gran contraste */
+.boton-accion-principal, .boton-enviar {
+    display: inline-block;
+    background-color: #E7E5DD; /* Acento claro */
+    color: #081C34; /* Texto marino oscuro */
+    padding: 1rem 2.2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.boton-accion-principal:hover, .boton-enviar:hover {
+    background-color: #F3F3F3;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(231, 229, 221, 0.3);
+}
+
+/* Etiqueta de estilo Glass */
+.badge-vidrio {
+    display: inline-block;
+    background-color: rgba(243, 243, 243, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 243, 243, 0.2);
+    color: #E7E5DD;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   4. HEADER GLASSMORPHISM
+   ========================================================================== */
 .sitio-header {
-    position: fixed;
+    background-color: rgba(8, 28, 52, 0.6); /* Azul marino muy transparente */
+    padding: 1.2rem 0;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background: rgba(8, 28, 52, 0.35);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(243, 243, 243, 0.05);
+    z-index: 1000;
+    backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(243, 243, 243, 0.08);
 }
 
 .header-contenedor {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 2rem;
+    padding: 0 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}
-
-.punto-acento {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: #E7E5DD;
-    border-radius: 50%;
-    margin-left: 4px;
-}
-
-.navegacion-principal .enlace-nav {
-    color: rgba(243, 243, 243, 0.6);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.navegacion-principal .enlace-nav:hover,
-.navegacion-principal .enlace-nav.activo {
     color: #F3F3F3;
-}
-
-/* Diseño de Secciones de Contenido */
-.seccion-pantalla-completa {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-.contenedor-centrado {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 4rem;
-}
-
-.saludo-badge {
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background: rgba(243, 243, 243, 0.05);
-    border: 1px solid rgba(243, 243, 243, 0.1);
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 800;
+    font-size: 1.3rem;
     letter-spacing: 1px;
-    margin-bottom: 2rem;
 }
 
-.titulo-principal {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -2px;
-    margin-bottom: 2rem;
-}
-
-.texto-gradiente {
-    background: linear-gradient(135deg, #ffffff 0%, #a2bccc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.descripcion-hero {
-    font-size: 1.15rem;
-    color: rgba(243, 243, 243, 0.7);
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-}
-
-/* Estilos de Botoneras */
-.botones-accion {
+.navegacion-principal ul {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.boton-primario {
-    background-color: #F3F3F3;
-    color: #081C34;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.boton-primario:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(243, 243, 243, 0.1);
-}
-
-.boton-secundario {
-    border: 1px solid rgba(243, 243, 243, 0.2);
-    color: #F3F3F3;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-
-.boton-secundario:hover {
-    background: rgba(243, 243, 243, 0.05);
-}
-
-/* ==========================================================================
-   4. SECCIÓN PROYECTOS ORIGINAL (TARJETAS GLASSMORPHISM)
-   ========================================================================== */
-.subtitulo-seccion-claro {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(243, 243, 243, 0.4);
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.titulo-seccion-claro {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 4rem;
-    text-align: center;
-}
-
-.grid-tres-columnas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
     gap: 2.5rem;
 }
 
-/* Tarjetas de Cristal Líquido */
-.tarjeta-vidrio {
-    background: rgba(243, 243, 243, 0.03);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(243, 243, 243, 0.08);
-    border-radius: 24px;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-}
-
-.tarjeta-vidrio:hover {
-    transform: translateY(-8px);
-    border-color: rgba(243, 243, 243, 0.2);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-}
-
-.proyecto-contenedor-imagen {
+.navegacion-principal a {
+    color: rgba(243, 243, 243, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
     position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.navegacion-principal a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #E7E5DD;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navegacion-principal a:hover {
+    color: #F3F3F3;
+}
+
+.navegacion-principal a:hover::after {
     width: 100%;
-    height: 240px;
+}
+
+/* ==========================================================================
+   5. SECCIÓN HERO Y FOTO LÍQUIDA (MORPHING)
+   ========================================================================== */
+.hero-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.hero-columna-texto {
+    flex: 1.2;
+}
+
+.hero-columna-texto h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+    letter-spacing: -2px;
+}
+
+/* Gradiente inverso claro para destacar sobre fondo oscuro */
+.texto-gradiente-marino {
+    /* Definimos el degradado */
+    background: linear-gradient(45deg, #F3F3F3, #DCDCDC);
+    
+    /* Versión estándar (para navegadores modernos) */
+    background-clip: text;
+    
+    /* Versión para navegadores basados en WebKit (Chrome, Safari, Edge) */
+    -webkit-background-clip: text;
+    
+    /* Hacemos transparente el color del texto para que el fondo se vea a través */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-columna-texto h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #E7E5DD;
+    margin-bottom: 2rem;
+}
+
+.descripcion-hero {
+    font-size: 1.1rem;
+    color: #DCDCDC;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+}
+
+.hero-columna-imagen {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTENEDOR DE IMAGEN: Efecto líquido dinámico */
+.marco-foto-liquido {
+    width: 380px;
+    height: 380px;
+    background: rgba(243, 243, 243, 0.05); /* Cristal puro */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    /* Borde simulando el reflejo de la luz en el agua */
+    border: 2px solid rgba(243, 243, 243, 0.2);
+    border-top: 2px solid rgba(243, 243, 243, 0.4);
+    padding: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    /* Animación clave para la forma fluida */
+    animation: morphing-liquido 8s ease-in-out infinite;
+}
+
+.foto-perfil-fluida {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* La imagen interna hereda la misma animación para moverse junto al marco */
+    animation: morphing-liquido 8s ease-in-out infinite;
+}
+
+/* Keyframes que alternan los radios de los bordes para crear un blob orgánico */
+@keyframes morphing-liquido {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 70% 70% 30% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* ==========================================================================
+   6. SECCIÓN PROYECTOS (TARJETAS GLASSMORPHISM)
+   ========================================================================== */
+.grid-tres-columnas {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+/* Estructura universal de tarjeta de cristal */
+.tarjeta-vidrio {
+    flex: 1;
+    min-width: 320px;
+    background: rgba(243, 243, 243, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 243, 243, 0.1);
+    border-top: 1px solid rgba(243, 243, 243, 0.25); /* Luz superior */
+    border-radius: 20px;
     overflow: hidden;
-    background-color: rgba(243, 243, 243, 0.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* SOLUCIÓN AGRESIVA: Fuerza a CUALQUIER imagen dentro de la tarjeta a completarse */
+.tarjeta-vidrio img, 
+.proyecto-contenedor-imagen img,
+.proyecto-contenedor-imagen * img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 240px !important; /* Fuerza la altura exacta de la caja */
+    max-height: 240px !important;
+    object-fit: contain !important; /* Obliga a encoger la imagen para que quepa ENTERA */
+    object-position: center !important;
+    display: block !important;
+}
+
+/* Evita que el contenedor aplaste o deforme la estructura */
+.proyecto-contenedor-imagen {
+    width: 100% !important;
+    height: 240px !important;
+    overflow: hidden !important;
+    background-color: rgba(8, 28, 52, 0.4) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .proyecto-imagen {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tarjeta-vidrio:hover .proyecto-imagen {
-    transform: scale(1.05);
+    transition: transform 0.6s ease;
 }
 
 .proyecto-contenido {
@@ -285,214 +374,288 @@ body {
 }
 
 .proyecto-contenido h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8rem;
+    color: #F3F3F3;
 }
 
 .proyecto-contenido p {
     font-size: 0.95rem;
-    color: rgba(243, 243, 243, 0.6);
-    line-height: 1.6;
+    color: #DCDCDC;
 }
 
-/* ==========================================================================
-   5. AGREGADO: CONTROL DE VISTAS Y MAQUETACIÓN DE WIREFRAMES
-   ========================================================================== */
-
-/* Clases de control de estado de las vistas */
-.galeria-detalle-oculta {
-    display: none;
-}
-
-.galeria-detalle-activa {
-    display: block;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.subgaleria-contenido {
-    display: none;
-}
-
-.subgaleria-contenido.activa {
-    display: block;
-}
-
-/* Botón flotante para regresar al menú principal */
-.boton-regresar {
+.tarjeta-vidrio:hover {
+    transform: translateY(-8px);
     background: rgba(243, 243, 243, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(243, 243, 243, 0.2);
-    color: #E7E5DD;
-    padding: 0.6rem 1.5rem;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 2.5rem;
-    transition: all 0.3s ease;
-}
-
-.boton-regresar:hover {
-    background-color: #E7E5DD;
-    color: #081C34;
-    transform: translateX(-3px);
-}
-
-/* Estilo base para los bloques contenedores de imágenes */
-.bloque-galeria {
-    background: rgba(243, 243, 243, 0.05);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(243, 243, 243, 0.1);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    height: 100%;
-}
-
-.bloque-galeria img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.bloque-galeria:hover {
-    transform: translateY(-4px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
     border-color: rgba(243, 243, 243, 0.3);
 }
 
-.bloque-galeria:hover img {
-    transform: scale(1.04);
-}
-
-/* --------------------------------------------------------------------------
-   ESTRUCTURA 1: WIREFRAME SIMÉTRICO (Diseño / Edición)
-   Fila superior alta (rectángulos), fila inferior baja (cuadrados)
-   -------------------------------------------------------------------------- */
-.grid-wireframe-simetrico {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-}
-
-.grid-wireframe-simetrico .bloque-galeria.grande {
-    height: 280px; /* Proporción vertical de la primera fila */
-}
-
-.grid-wireframe-simetrico .bloque-galeria.chico {
-    height: 160px; /* Proporción horizontal de la segunda fila */
-}
-
-/* --------------------------------------------------------------------------
-   ESTRUCTURA 2: WIREFRAME MOSAICO (Ilustración)
-   Estructura asimétrica con bloques de ancho doble
-   -------------------------------------------------------------------------- */
-.grid-wireframe-mosaico {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.grid-wireframe-mosaico .bloque-galeria {
-    height: 220px;
-}
-
-/* Bloques que abarcan dos columnas (Mosaico Asimétrico) */
-.grid-wireframe-mosaico .bloque-galeria.ancho {
-    grid-column: span 2;
-}
-
-/* Animación de entrada fluida */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+.tarjeta-vidrio:hover .proyecto-imagen {
+    transform: scale(1.08);
 }
 
 /* ==========================================================================
-   6. SECCIONES ADICIONALES (HABILIDADES, CONTACTO Y ADAPTABILIDAD)
+   7. SECCIÓN HABILIDADES (CÍRCULOS DE CRISTAL)
    ========================================================================== */
-.subtitulo-seccion {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(243, 243, 243, 0.4);
-    margin-bottom: 0.5rem;
-}
-
-.titulo-seccion {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 3rem;
-}
-
-.grid-dos-columnas {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.bloque-texto p {
-    font-size: 1.1rem;
-    color: rgba(243, 243, 243, 0.7);
-    margin-bottom: 2rem;
-}
-
-.detalles-personales {
-    background: rgba(243, 243, 243, 0.02);
-    border-left: 3px solid rgba(243, 243, 243, 0.2);
-    padding: 1.5rem;
-    border-radius: 0 16px 16px 0;
-}
-
-.dato-perfil {
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-}
-
-.dato-perfil:last-child {
-    margin-bottom: 0;
-}
-
-.dato-perfil strong {
-    color: #F3F3F3;
-}
-
-.placeholder-foto {
-    width: 100%;
-    height: 450px;
-    background: rgba(243, 243, 243, 0.03);
-    border: 1px solid rgba(243, 243, 243, 0.1);
-    border-radius: 24px;
-}
-
-/* Estilo para las burbujas de habilidades circulares originales */
 .grid-cuatro-columnas {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tarjeta-habilidad-circular {
-    position: relative;
+    width: 220px;
+    height: 220px;
+    flex: 0 0 auto;
+    /* Estética de cristal circular */
+    background: linear-gradient(135deg, rgba(243, 243, 243, 0.08) 0%, rgba(243, 243, 243, 0.02) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(243, 243, 243, 0.15);
+    border-top: 1px solid rgba(243, 243, 243, 0.3);
+    border-radius: 50%; /* Forma redonda permanente */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.tarjeta-habilidad-circular:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(243, 243, 243, 0.12) 0%, rgba(243, 243, 243, 0.04) 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(243, 243, 243, 0.4);
+}
+
+.habilidad-numero {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(243, 243, 243, 0.15);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta-habilidad-circular:hover .habilidad-numero {
+    transform: translateY(-5px);
+    color: rgba(243, 243, 243, 0.3);
+}
+
+.tarjeta-habilidad-circular p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. SECCIÓN CONTACTO (FORMULARIO DE VIDRIO)
+   ========================================================================== */
+.contacto-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+.contacto-columna-info {
+    flex: 1;
+}
+
+.titulo-contacto {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 1.5rem;
+    color: #F3F3F3;
+}
+
+.descripcion-contacto {
+    font-size: 1.1rem;
+    color: #DCDCDC;
+}
+
+.contacto-columna-formulario {
+    flex: 1.1;
+    /* Panel de vidrio gigante para el formulario */
+    background: rgba(243, 243, 243, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 243, 243, 0.15);
+    border-top: 1px solid rgba(243, 243, 243, 0.3);
+    padding: 3.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campo-formulario label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #DCDCDC;
+}
+
+/* Inputs diseñados para integrarse al fondo transparente */
+.campo-formulario input,
+.campo-formulario textarea {
     width: 100%;
-    aspect-ratio: 1;
-    background: rgba(243, 243, 243, 0.02);
-    border: 1px solid rgba(243, 243, 243, 0.08);
+    padding: 1rem;
+    /* Fondo translúcido interno */
+    background-color: rgba(8, 28, 52, 0.4);
+    border: 1px solid rgba(243, 243, 243, 0.2);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #F3F3F3;
+    transition: all 0.3s ease;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: rgba(243, 243, 243, 0.3);
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: #E7E5DD;
+    background-color: rgba(8, 28, 52, 0.6);
+    box-shadow: 0 0 0 4px rgba(231, 229, 221, 0.1);
+}
+
+.contacto-columna-formulario .boton-enviar {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.sitio-footer {
+    background-color: rgba(8, 28, 52, 0.9);
+    padding: 4rem 0;
+    border-top: 1px solid rgba(243, 243, 243, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: rgba(243, 243, 243, 0.5);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 2rem;
+}
+
+.redes-sociales a {
+    color: #E7E5DD;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #F3F3F3;
+    transform: translateY(-2px);
+}
+/* --- FOOTER: Estilos para el cierre del portafolio --- */
+
+.sitio-footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+    /* Ajusta este color al tono de azul de tu fondo */
+    background-color: transparent; 
+}
+
+.footer-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 24px; /* Espacio entre iconos */
+    justify-content: center;
+}
+
+.redes-sociales a {
+    display: block;
+    width: 24px; /* Tamaño del icono */
+    height: 24px;
+    color: #ffffff; /* Color de los iconos */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.redes-sociales a:hover {
+    opacity: 1;
+    transform: translateY(-3px); /* Un pequeño salto elegante */
+    cursor: pointer;
+}
+
+/* Asegurar que los iconos SVG se ajusten al contenedor */
+.redes-sociales a svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+/* a */
+.tarjeta-habilidad-circular {
+    position: relative;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     border-radius: 50%;
     cursor: pointer;
-    overflow: hidden;
 }
 
 .carrusel-imagenes {
@@ -510,7 +673,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura inicial */
     z-index: 2;
     transition: background 0.4s ease;
 }
@@ -519,9 +682,10 @@ body {
     z-index: 3;
     text-align: center;
     color: white;
-    pointer-events: none; 
+    pointer-events: none; /* Para que no interfiera con el hover */
 }
 
+/* Hover: oscurecemos un poco más el fondo */
 .tarjeta-habilidad-circular:hover .overlay {
     background: rgba(0, 0, 0, 0.6);
 }
@@ -533,181 +697,26 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* La magia: usamos 'ease-in-out' para suavidad máxima */
+    animation: suavizado 9s infinite ease-in-out;
 }
 
-.porcentaje-habilidad {
-    display: block;
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 0.25rem;
-}
+/* Desfase para que roten en orden */
+.carrusel-imagenes img:nth-child(1) { animation-delay: 0s; }
+.carrusel-imagenes img:nth-child(2) { animation-delay: 3s; }
+.carrusel-imagenes img:nth-child(3) { animation-delay: 6s; }
 
-.contenido-original h4 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(243, 243, 243, 0.8);
+@keyframes suavizado {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    33% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
 }
-
-/* Formulario de Contacto en Cristal Puro */
-.contenedor-formulario-vidrio {
-    background: rgba(243, 243, 243, 0.02);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(243, 243, 243, 0.08);
-    padding: 3.5rem;
-    border-radius: 32px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.grid-dos-columnas-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.campo-formulario {
-    margin-bottom: 2rem;
-}
-
-.campo-formulario label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: rgba(243, 243, 243, 0.6);
-    letter-spacing: 0.5px;
-}
-
-.campo-formulario input,
-.campo-formulario textarea {
+/* zzz */
+.contenedor-tarjeta img {
     width: 100%;
-    background: rgba(243, 243, 243, 0.04);
-    border: 1px solid rgba(243, 243, 243, 0.1);
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
-    color: #F3F3F3;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.campo-formulario input:focus,
-.campo-formulario textarea:focus {
-    outline: none;
-    border-color: rgba(243, 243, 243, 0.3);
-    background: rgba(243, 243, 243, 0.08);
-}
-
-.boton-enviar {
-    background: #F3F3F3;
-    color: #081C34;
-    border: none;
-    padding: 1rem 2.5rem;
-    border-radius: 30px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.boton-enviar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(243, 243, 243, 0.15);
-}
-
-/* Footer del Sitio */
-.sitio-footer {
-    border-top: 1px solid rgba(243, 243, 243, 0.05);
-    background: rgba(5, 19, 41, 0.5);
-}
-
-.footer-contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.copyright {
-    font-size: 0.9rem;
-    color: rgba(243, 243, 243, 0.4);
-}
-
-.redes-sociales a {
-    color: rgba(243, 243, 243, 0.5);
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-.redes-sociales a:hover {
-    color: #F3F3F3;
-}
-
-/* ==========================================================================
-   7. ADAPTABILIDAD LOGÍSTICA (MEDIA QUERIES)
-   ========================================================================== */
-@media (max-width: 1024px) {
-    .grid-tres-columnas {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .grid-cuatro-columnas {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .grid-dos-columnas {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .titulo-principal {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 900px) {
-    /* Ajustes específicos para las galerías en tableta */
-    .grid-wireframe-simetrico, 
-    .grid-wireframe-mosaico {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .grid-wireframe-mosaico .bloque-galeria.ancho {
-        grid-column: span 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-contenedor {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .navegacion-principal .enlace-nav {
-        margin: 0 0.75rem;
-    }
-    .grid-dos-columnas-form {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    .contenedor-formulario-vidrio {
-        padding: 2rem;
-    }
-    .footer-contenedor {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 550px) {
-    .grid-tres-columnas,
-    .grid-cuatro-columnas,
-    .grid-wireframe-simetrico,
-    .grid-wireframe-mosaico {
-        grid-template-columns: 1fr;
-    }
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Elimina espacios vacíos debajo de la imagen */
 }
